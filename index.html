@@ -1,11 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
+    <header class="head">
+        <div class="logo">
+            Healthy India
+        </div>
+
+        <nav class="navigation">
+            <ul>
+                <a href="">
+                    <li>Home</li>
+                </a>
+                <a href="#cat">
+                    <li>Categories</li>
+                </a>
+                <a href="">
+                    <li>AI Assistant</li>
+                </a>
+                <a href="">
+                    <li>Register</li>
+                </a>
+                <a href="">
+                    <li>Help</li>
+                </a>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="slider">
+            <img src="1.jpg" alt="">
+            <img src="2.webp" alt="">
+            <img src="3.webp" alt="">
+            <img src="5.jpg" alt="">
+            <img src="6.jpg" alt="">
+        </div>
+    </section>
+
+    <section class="categories">
+        <h1 id="cat">Categories</h1><br>
+        <div class="row1">
+            <div class="heart">
+                <img width="100%" src="heart.jpg.webp" alt="">
+                <h2>Cardiologist</h2><br>
+                <p>Heart and blood pressure-related issues</p><br>
+                <button class="reg">Book Appointment</button>
+            </div>
+            <div class="physician">
+                <img width="100%" src="body.jpg" alt="">
+                <h2>General physician</h2><br>
+                <h3>What they Do</h3><br>
+                <p>Common health concerns, fevers, colds, etc.</p><br><button class="reg">Book
+                    Appointment</button>
+            </div>
+            <div class="neurologist">
+                <img width="100%" src="nervous.jpg" alt="">
+                <h2>Neurologist</h2><br>
+                <h3>What they Do</h3><br>
+                
+                <p>Brain, spinal cord, and nerves</p><br><button
+                    class="reg">Book Appointment</button>
+            </div>
+        </div>
+
+
+        <div class="row2">
+            <div class="skin">
+                <img width="100%" src="skin.webp" alt="">
+                <h2>Dermatologist</h2><br>
+                <h3>What they Do</h3><br>
+                <p>Skin, hair, and nail care</p><br><button
+                    class="reg">Book Appointment</button>
+            </div>
+            <div class="bone">
+                <img width="100%" src="bone.avif" alt="">
+                <h2>Orthopedic</h2><br>
+                <h3>What they Do</h3><br>
+                <p>Bone, muscle, and joint problems</p><br><button class="reg">Book
+                    Appointment</button>
+            </div>
+            <div class="brain">
+                <img width="100%" src="brain.jpeg" alt="">
+                <h2>Dentist</h2>
+                <br>
+                <h3>What they Do</h3><br>
+                <p>Teeth and oral hygiene</p>
+                <br><button class="reg">Book Appointment</button>
+            </div>
+        </div>
+
+
+        <div class="row3">
+            <div class="eye">
+                <img width="100%" src="eye.jpeg" alt="">
+                <h2>Ophthalmologist</h2><br>
+                <h3>What they Do</h3><br>
+                <p>Eye checkups and surgeries</p><br><button class="reg">Book
+                    Appointment</button>
+            </div>
+            <div class="harmone">
+                <img width="100%" src="ear.jpg" alt="">
+                <h2>Endocrinologist</h2><br>
+                <h3>What they Do</h3><br>
+                <p>Hormone-related conditions like diabetes, thyroid</p><br><button
+                    class="reg">Book Appointment</button>
+            </div>
+
+            <div class="child">
+                <img width="100%" src="child.jpg" alt="">
+                <h2>Pediatrician</h2><br>
+                <h3>What they Do</h3><br>
+                <p>Child health and development</p><br><button
+                    class="reg">Book Appointment</button>
+            </div>
+
+        </div>
+    </section>
     
+
+    <section class="ai">
+        <h1>AI Assistant</h1>
+        <div class="ai1">
+            <img src="ai.jpg" alt="">
+            <h2> Your AI Assistant</h2>
+            <textarea placeholder="Describe your issues here......" id="userInput"></textarea>
+            <p id="response"></p>
+            <button onclick="getSuggestion()" class="reg">Chat Now</button>
+        </div>
+
+    </section>
+<script src="index.js"></script>
 </body>
+
 </html>
