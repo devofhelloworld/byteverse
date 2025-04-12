@@ -55,7 +55,7 @@ async function getSuggestion() {
     const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
       headers: {
-        "Authorization": "Bearer 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", 
+        "Authorization": "Bearer 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", 
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
