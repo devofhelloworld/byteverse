@@ -6,11 +6,11 @@ async function getSuggestion() {
     const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
       headers: {
-        "Authorization": "Bearer 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", // 👈 Replace this
+        "Authorization": "Bearer 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", 
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        model: "mistralai/mistral-7b-instruct", // ✅ Free model
+        model: "mistralai/mistral-7b-instruct", 
         messages: [
           {
             role: "system",
