@@ -1,51 +1,55 @@
-let nextDom = document.getElementById('next');
-let prevDom = document.getElementById('prev');
 
-let carouselDom = document.querySelector('.carousel');
-let SliderDom = carouselDom.querySelector('.carousel .list');
-let thumbnailBorderDom = document.querySelector('.carousel .thumbnail');
+const nextDom = document.getElementById('next');
+const prevDom = document.getElementById('prev');
+const carouselDom = document.querySelector('.carousel');
+const SliderDom = carouselDom.querySelector('.carousel .list');
+const thumbnailBorderDom = carouselDom.querySelector('.thumbnail');
+const timeDom = carouselDom.querySelector('.time');
+
+
 let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll('.item');
-let timeDom = document.querySelector('.carousel .time');
-
 thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
-let timeRunning = 3000;
-let timeAutoNext = 7000;
 
-nextDom.onclick = function(){
-    showSlider('next');    
-}
+const timeRunning = 3000;
+const timeAutoNext = 7000;
 
-prevDom.onclick = function(){
-    showSlider('prev');    
-}
 let runTimeOut;
 let runNextAuto = setTimeout(() => {
-    next.click();
-}, timeAutoNext)
-function showSlider(type){
-    let  SliderItemsDom = SliderDom.querySelectorAll('.carousel .list .item');
-    let thumbnailItemsDom = document.querySelectorAll('.carousel .thumbnail .item');
-    
-    if(type === 'next'){
-        SliderDom.appendChild(SliderItemsDom[0]);
-        thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
-        carouselDom.classList.add('next');
-    }else{
-        SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
-        thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
-        carouselDom.classList.add('prev');
-    }
-    clearTimeout(runTimeOut);
-    runTimeOut = setTimeout(() => {
-        carouselDom.classList.remove('next');
-        carouselDom.classList.remove('prev');
-    }, timeRunning);
+  nextDom.click();
+}, timeAutoNext);
 
-    clearTimeout(runNextAuto);
-    runNextAuto = setTimeout(() => {
-        next.click();
-    }, timeAutoNext)
+
+nextDom.onclick = () => showSlider('next');
+prevDom.onclick = () => showSlider('prev');
+
+
+function showSlider(direction) {
+  const SliderItemsDom = SliderDom.querySelectorAll('.item');
+  const thumbnailItemsDom = thumbnailBorderDom.querySelectorAll('.item');
+
+  if (direction === 'next') {
+    SliderDom.appendChild(SliderItemsDom[0]);
+    thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+    carouselDom.classList.add('next');
+  } else {
+    SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
+    thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
+    carouselDom.classList.add('prev');
+  }
+
+
+  clearTimeout(runTimeOut);
+  runTimeOut = setTimeout(() => {
+    carouselDom.classList.remove('next', 'prev');
+  }, timeRunning);
+
+
+  clearTimeout(runNextAuto);
+  runNextAuto = setTimeout(() => {
+    nextDom.click();
+  }, timeAutoNext);
 }
+
 
 async function getSuggestion() {
     const input = document.getElementById("userInput").value;
@@ -55,7 +59,7 @@ async function getSuggestion() {
     const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
       headers: {
-        "Authorization": "Bearer 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", 
+        "Authorization": "Bearer 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", 
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
@@ -79,3 +83,11 @@ async function getSuggestion() {
     const reply = data?.choices?.[0]?.message?.content || "⚠️ No response received.";
     responseEl.innerText = reply;
   }
+  
+  const menuToggle = document.getElementById('menu-toggle');
+  const navList = document.querySelector('.navigation ul');
+
+  menuToggle.addEventListener('click', () => {
+    navList.classList.toggle('show');
+  });
+
