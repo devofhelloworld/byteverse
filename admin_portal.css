@@ -1,13 +1,11 @@
-/* Admin Portal Stylesheet */
 
-/* General Reset */
 body, h1, h2, h3, p, ul, ol, li, a {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body Styling */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
@@ -15,7 +13,7 @@ body {
     line-height: 1.6;
 }
 
-/* Header Styling */
+
 header {
     background-color: #4CAF50;
     color: white;
@@ -23,7 +21,7 @@ header {
     text-align: center;
 }
 
-/* Navigation Bar */
+
 nav {
     background-color: #333;
     color: white;
@@ -40,12 +38,12 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* Main Content */
+
 main {
     padding: 2rem;
 }
 
-/* Footer Styling */
+
 footer {
     background-color: #333;
     color: white;
