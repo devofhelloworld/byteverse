@@ -11,50 +11,172 @@ header{
     background-color: grey;
     border-radius: 8px;
 }
-.navigation ul{
-    display: flex;
-    gap: 20px  ;
-    flex-wrap:wrap;
-    list-style: none;
-}
-.navigation ul a{
-    text-decoration: none;
-    color: black;
-    font-family: 'Times New Roman', Times, serif;
-    
-}
+
 .logo{
-    font-size: 2em;
-   text-shadow: 0 2px 3px black;
-    color:white;
-    font-weight: bolder;
+    font-size: 3em;
+    font-weight: bold;
 }
-.row1,.row2,.row3{
+
+.navigation ul {
     display: flex;
-    overflow: hidden;
-    gap: 10px;
-    padding: 10px;
+    gap: 20px;
+    list-style: none;
+    flex-wrap: wrap;
+    transition: all 0.3s ease-in-out;
 }
-.heart,.physician,.neurologist,.harmone,.bone,.brain,.skin,.eye,.child{
-    width: 100%;
-    border-radius: 5px;
-    text-align: center;
-    align-items: baseline;
+.navigation ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+.navigation ul li a:hover {
+    background: #38e38f;
+    color: #000;
+}
+
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+    margin-left: auto;
+    padding: 5px 10px;
+}
+
+
+@media (max-width: 768px) {
+    .navigation {
+        width: 100%;
+    }
+
+    .navigation ul {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        width: 100%;
+        margin-top: 10px;
+        border-radius: 10px;
+        padding: 10px 0;
+    }
+
+    .navigation ul.show {
+        display: flex;
+    }
+
+    .navigation ul li {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.row1, .row2, .row3 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 30px 0;
+}
+
+.heart, .physician, .neurologist, 
+.skin, .bone, .brain, 
+.eye, .harmone, .child {
+    background-color: #111;
+    color: white;
+    width: 300px;
+    min-height: 440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-sizing: border-box;
-    padding: 10px;
-    box-shadow: 4px 4px 7px 3px grey;
-    transition: height 1s , width 1s, transform 2s;
-    object-fit: contain;
-    
 }
-.reg{
-  height: 40px;
-  padding: 5px;
-  border-radius: 4px;
-  cursor: pointer; 
-  background-color: rgb(125, 238, 204);
-  
+
+.heart:hover, .physician:hover, .neurologist:hover,
+.skin:hover, .bone:hover, .brain:hover,
+.eye:hover, .harmone:hover, .child:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,255,200,0.4);
 }
+
+.heart img, .physician img, .neurologist img,
+.skin img, .bone img, .brain img,
+.eye img, .harmone img, .child img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.heart h2, .physician h2, .neurologist h2,
+.skin h2, .bone h2, .brain h2,
+.eye h2, .harmone h2, .child h2 {
+    margin-top: 15px;
+    font-size: 1.5em;
+    color: #38e38f;
+}
+
+.heart h3, .physician h3, .neurologist h3,
+.skin h3, .bone h3, .brain h3,
+.eye h3, .harmone h3, .child h3 {
+    font-size: 1.1em;
+    margin: 10px 0 5px;
+    font-weight: 500;
+    color: #ddd;
+}
+
+.heart p, .physician p, .neurologist p,
+.skin p, .bone p, .brain p,
+.eye p, .harmone p, .child p {
+    font-size: 0.95em;
+    line-height: 1.4;
+    color: #ccc;
+    flex-grow: 1;
+}
+
+
+.reg {
+    margin-top: auto;
+    height: 40px;
+    padding: 8px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #38e38f;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.reg:hover {
+    background-color: #2cd27c;
+}
+
+
+@media screen and (max-width: 992px) {
+    .row1, .row2, .row3 {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+}
+
 .categories{
     gap: 20px;
     text-align: start;
@@ -76,6 +198,9 @@ body{
     color: #eee;
     font-family: Poppins;
     font-size: 12px;
+}
+.des{
+    font-size: 1.8em
 }
 a{
     text-decoration: none;
@@ -502,3 +627,165 @@ footer .social{
     text-shadow: 0 3px 6px red;
     font-size: 2.5em;
 }
+/* Footer Modern Design */
+.footer-container {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-brand h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.footer-brand p {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.rights {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-top: 10px;
+}
+
+.footer-social {
+    margin-top: 20px;
+}
+
+.footer-social a {
+    margin: 0 10px;
+    display: inline-block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.footer-social img {
+    width: 32px;
+    height: 32px;
+    filter: brightness(90%);
+}
+
+.footer-social a:hover img {
+    transform: scale(1.2);
+    filter: brightness(120%);
+}
+
+
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .footer-brand, .footer-social {
+        flex: 1;
+    }
+
+    .footer-social {
+        text-align: right;
+    }
+}
+
+
+@media (max-width: 992px) {
+    .carousel .list .item .content {
+      padding-right: 0;
+      top: 15%;
+    }
+  
+    .carousel .list .item .title {
+      font-size: 2.5em;
+    }
+  
+    .carousel .list .item .topic {
+      font-size: 2em;
+    }
+  
+    .carousel .list .item .des {
+      font-size: 1em;
+      line-height: 1.4;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+  
+    .carousel .list .item .buttons {
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+  
+    .carousel .list .item .buttons button {
+      font-size: 0.9em;
+      padding: 8px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .carousel {
+      height: auto;
+    }
+  
+    .carousel .list .item {
+      position: relative;
+      height: auto;
+    }
+  
+    .carousel .list .item img {
+      height: 300px;
+      object-fit: cover;
+    }
+  
+    .carousel .list .item .content {
+      position: static;
+      width: 100%;
+      transform: none;
+      padding: 20px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+  
+    .carousel .list .item .title,
+    .carousel .list .item .topic {
+      font-size: 1.8em;
+    }
+  
+    .carousel .list .item .des {
+      font-size: 0.95em;
+    }
+  
+    .carousel .list .item .buttons {
+      grid-template-columns: 1fr;
+      justify-content: center;
+    }
+  
+    .arrows {
+      top: 90%;
+      width: 100%;
+      justify-content: center;
+    }
+  
+    .thumbnail {
+      position: static;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+  
+    .thumbnail .item {
+      width: 100px;
+      height: 150px;
+    }
+  }
+  
